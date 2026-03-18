@@ -1,7 +1,3 @@
-import requests
-from urllib.parse import urljoin
-from bs4 import BeautifulSoup as bs
-import pandas as pd
 import cv2
 import matplotlib.pyplot as plt
 
@@ -32,39 +28,3 @@ cv2.destroyAllWindows()
 # plt.close('all')
 # urls = []
 # numeric = 11
-# def urls_to_scrap():
-#     for i in range(numeric):
-#         url = f"{address}?pn={i}"
-#         urls.append(url)
-#     return urls
-#
-#
-# links = []
-# def scrape():
-#     for idx, url in enumerate(urls_to_scrap(), start=1):
-#         response = requests.get(url).content
-#         soup = bs(response, 'html.parser')
-#
-#         for x in soup.find_all('li'):
-#             label = x.find('span', id ="data-test")
-#             for y in label:
-#                 text = y.get_text(strip=True)
-#                 status.append(text)
-#                 print(status)
-#     return status
-#
-#
-# def create_df():
-#     numer = []
-#     for i in range(numeric):
-#         i=i+1
-#         numer.append(i)
-#     data ={'Numeracja':numer,
-#            'Adresy': urls_to_scrap()}
-#
-#     df = pd.DataFrame(data)
-#     print(df)
-#     return df
-#
-# # if __name__ == '__main__':
-#     # create_df()
