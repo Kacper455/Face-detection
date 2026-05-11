@@ -23,8 +23,4 @@ for (x, y, w, h) in faces:
 cv2.imshow("1", img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-# plt.imshow(RGB_img)
-# plt.waitforbuttonpress()
-# plt.close('all')
-# urls = []
-# numeric = 11
+
