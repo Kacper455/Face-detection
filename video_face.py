@@ -28,20 +28,20 @@ while True:
     if (ret == True):
 
         gray_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face_cascade.detectMultiScale(gray_img, 1.3, 4)
+        faces = face_cascade.detectMultiScale(gray_img, 1.3, 5)
 
         for (x, y, w, h) in faces:
              cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
              ROI_img = gray_img[y:y+w, x:x+w]
              ROI_color = frame[y:y+w, x:x+h]
-             eyes = eye_cascade.detectMultiScale(ROI_img,1.1,6)
+             eyes = eye_cascade.detectMultiScale(ROI_img,1.3,5)
 
              for (ex, ey, ew, eh) in eyes:
                  cv2.circle(ROI_color, (ex + 30, ey + 30), int((ey/2)), (0, 255, 0), 2)
 
         cv2.imshow('0', frame)
 
-        if cv2.waitKey(5) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
 source.release()
